@@ -1,4 +1,4 @@
-name: Trivy SCA Scans
+name: Trivy Misconfig Scans
 
 on:
   pull_request:
@@ -8,17 +8,16 @@ on:
 
 jobs:
   sca-and-config:
-    name: SCA Scan
+    name: Misconfig Scan
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: SCA Scan (Filesystem)
+      - name: Misconfiguration Scan
         uses: aquasecurity/trivy-action@master
         with:
-          scan-type: fs
-          ignore-unfixed: true
+          scan-type: config
           format: table
           severity: CRITICAL,HIGH

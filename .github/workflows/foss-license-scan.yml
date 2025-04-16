@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 2 * * *'  # Runs daily at 02:00 UTC
+    - cron: '0 2 * * *'
 
 jobs:
   license-scan:
@@ -13,11 +13,10 @@ jobs:
 
     permissions:
       contents: read
-      security-events: write
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run Licensee
-        uses: github/licensee-action@v2
+      - name: Run License Scan
+        uses: licensee/licensed-ci@v1

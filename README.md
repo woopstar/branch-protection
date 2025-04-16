@@ -49,7 +49,8 @@ branches:
         - "FOSS License Scan"
         - "CodeQL SAST"
         - "DAST OWASP ZAP"
-        - "SCA & Misconfig Scan"
+        - "SCA Scan"
+        - "Misconfig Scan"
         - "Secrets Scan (TruffleHog)"
         - "Validate branch-protection.yml"
     required_pull_request_reviews:

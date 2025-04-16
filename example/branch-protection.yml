@@ -8,7 +8,8 @@ branches:
         - "FOSS License Scan"
         - "CodeQL SAST"
         - "DAST OWASP ZAP"
-        - "SCA & Misconfig Scan"
+        - "Misconfig Scan"
+        - "SCA Scan"
         - "Secrets Scan (TruffleHog)"
         - "Validate branch-protection.yml"
 
