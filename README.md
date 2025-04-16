@@ -15,7 +15,7 @@ SPDX-License-Identifier: MIT
 ![Misconfig](https://github.com/woopstar/branch-protection/actions/workflows/misconfig-trivy.yml/badge.svg)
 ![Secrets Scan](https://github.com/woopstar/branch-protection/actions/workflows/secrets-scan.yml/badge.svg)
 ![Config Check](https://github.com/woopstar/branch-protection/actions/workflows/validate-config.yml/badge.svg)
-![Buy Me a Coffee](https://img.shields.io/badge/BuyMeACoffee-support-orange?logo=buymeacoffee)
+![https://www.buymeacoffee.com/woopstar](https://img.shields.io/badge/BuyMeACoffee-support-orange?logo=buymeacoffee)
 ![License](https://img.shields.io/github/license/woopstar/branch-protection)
 ![Version](https://img.shields.io/github/v/tag/woopstar/branch-protection)
 ![Downloads](https://img.shields.io/github/downloads/woopstar/branch-protection/total)
