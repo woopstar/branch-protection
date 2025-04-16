@@ -1,3 +1,8 @@
+<!--
+Copyright (c) 2025 Andreas Krüger
+SPDX-License-Identifier: MIT
+-->
+
 <p align="center">
   <img src="assets/logo.png" alt="Branch Protection Logo" width="200"/>
 </p>

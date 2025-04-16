@@ -1,3 +1,8 @@
+<!--
+Copyright (c) 2025 Andreas Krüger
+SPDX-License-Identifier: MIT
+-->
+
 # Contributing
 
 We welcome contributions! Please fork the repository and submit a pull request.
