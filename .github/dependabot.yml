@@ -8,7 +8,7 @@ updates:
     schedule:
       interval: "daily"
     labels:
-      - update
+      - dependencies
   - package-ecosystem: "pip"
     directory: "/"  # Assumes requirements.txt in root
     schedule:
@@ -19,4 +19,4 @@ updates:
       - dependency-name: "pip"
         versions: ["*"]
     labels:
-      - update
+      - dependencies

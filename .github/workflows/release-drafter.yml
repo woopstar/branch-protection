@@ -1,14 +1,17 @@
 # SPDX-License-Identifier: MIT
 # Copyright (C) 2025 Andreas Krüger
 
-name: Draft Release
+name: Release Drafter
 
 on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
   push:
     branches:
       - main
   pull_request:
-    types: [closed]
+    types: [opened, reopened, synchronize]
 
 permissions:
   contents: read
@@ -16,11 +19,16 @@ permissions:
 
 jobs:
   update_release_draft:
-    name: Update Release Draft
+    name: Update release draft
     runs-on: ubuntu-latest
-
     steps:
-      - name: Run Release Drafter
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Create Release
         uses: release-drafter/release-drafter@v6
+        with:
+          disable-releaser: github.ref != 'refs/heads/main'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

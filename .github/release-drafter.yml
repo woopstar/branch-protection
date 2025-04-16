@@ -29,6 +29,7 @@ categories:
       - 'perf'
       - 'build'
       - 'update'
+      - 'dependencies'
 
   - title: '🧪 Tests'
     labels:

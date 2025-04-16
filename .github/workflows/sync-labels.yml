@@ -5,17 +5,17 @@ name: Sync labels
 
 # yamllint disable-line rule:truthy
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [main]
+    types:
+      [opened, reopened, labeled, unlabeled]
     paths:
       - .github/sync-labels.yml
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pull-requests: write
-  labels: write
 
 jobs:
   labels:
