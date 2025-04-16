@@ -1,34 +1,62 @@
+# SPDX-FileCopyrightText: 2025 Andreas Krüger
 # SPDX-License-Identifier: MIT
-# Copyright (C) 2025 Andreas Krüger
 
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
+
 categories:
   - title: '🚀 Features'
     labels:
+      - 'feat'
       - 'feature'
       - 'enhancement'
+
   - title: '🐛 Bug Fixes'
     labels:
-      - 'bug'
       - 'fix'
+      - 'bug'
+
+  - title: '📚 Documentation'
+    labels:
+      - 'docs'
+      - 'documentation'
+
   - title: '🧰 Maintenance'
     labels:
       - 'chore'
+      - 'style'
       - 'refactor'
-      - 'docs'
+      - 'perf'
+      - 'build'
+
+  - title: '🧪 Tests'
+    labels:
+      - 'test'
+      - 'tests'
+
+  - title: '🚨 CI/CD'
+    labels:
+      - 'ci'
+      - 'workflow'
+
+  - title: '🔙 Reverts'
+    labels:
+      - 'revert'
+
   - title: '🔒 Security'
     labels:
       - 'security'
       - 'vulnerability'
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+
 version-resolver:
   major:
     labels:
       - 'breaking'
   minor:
     labels:
+      - 'feat'
       - 'feature'
       - 'enhancement'
   patch:
@@ -37,7 +65,13 @@ version-resolver:
       - 'bug'
       - 'chore'
       - 'refactor'
+      - 'docs'
+      - 'style'
+      - 'perf'
+      - 'test'
+      - 'ci'
       - 'security'
+      - 'workflow'
 
 template: |
   ## What's Changed
@@ -47,3 +81,5 @@ template: |
   ## Contributors
 
   $CONTRIBUTORS
+
+  Thanks to all the contributors who made this release possible. You rock!
