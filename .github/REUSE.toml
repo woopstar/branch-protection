@@ -1,0 +1,4 @@
+[reuse]
+project = "branch-protection"
+copyright_owner = "2024 woopstar"
+license = "MIT"
