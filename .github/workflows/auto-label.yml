@@ -26,7 +26,7 @@ jobs:
         id: action-assign-labels
         uses: mauroalderete/action-assign-labels@v1
         with:
-          pull-request-number: ${{ github.event.pull_request.number }}
+          pull-request-number: ${{ github.event.number }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           conventional-commits: |
             - type: fix
