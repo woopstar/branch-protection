@@ -4,9 +4,10 @@
 name: Auto Label PRs from Conventional Commits
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [main]
+    types:
+      [opened, reopened, labeled, unlabeled]
   workflow_dispatch:
 
 permissions:
