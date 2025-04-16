@@ -47,7 +47,7 @@ branches:
       strict: true
       contexts:
         - "FOSS License Scan"
-        - "CodeQL SAST"
+        - "CodeQL"
         - "DAST OWASP ZAP"
         - "SCA Scan"
         - "Misconfig Scan"
