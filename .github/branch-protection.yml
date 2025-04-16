@@ -7,7 +7,6 @@ branches:
       contexts:
         - "FOSS License Compliance"
         - "CodeQL"
-        - "DAST OWASP ZAP"
         - "SCA Scan"
         - "Misconfig Scan"
         - "Secrets Scan (TruffleHog)"

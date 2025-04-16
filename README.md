@@ -92,22 +92,22 @@ jobs:
 
 ## Security & Quality Coverage
 
-| Layer            | Coverage Tool           |
-|------------------|--------------------------|
-| SAST             | CodeQL                   |
-| DAST             | OWASP ZAP                |
-| SCA              | Trivy (Filesystem)       |
-| Misconfiguration | Trivy (Config Scanner)   |
-| License          | GitHub Licensee          |
-| Secrets          | TruffleHog + GitHub Native |
-| YAML Linting     | yq Validation            |
-| Dependency Updates | Dependabot             |
-| CI Enforcement   | GitHub Actions + Protection |
-| Label Sync       | Label Sync Action        |
-| Auto-Merge       | Dependabot Auto Merge    |
-| Copilot Settings | Copilot YAML Config      |
-| Funding          | GitHub Sponsors / BMC    |
-| Release Mgmt     | Release Drafter          |
+| Layer              | Coverage Tool               |
+|--------------------|-----------------------------|
+| SAST               | CodeQL                      |
+| DAST               | OWASP ZAP (Disabled)        |
+| SCA                | Trivy (Filesystem)          |
+| Misconfiguration   | Trivy (Config Scanner)      |
+| License            | GitHub Licensee             |
+| Secrets            | TruffleHog + GitHub Native  |
+| YAML Linting       | yq Validation               |
+| Dependency Updates | Dependabot                  |
+| CI Enforcement     | GitHub Actions + Protection |
+| Label Sync         | Label Sync Action           |
+| Auto-Merge         | Dependabot Auto Merge       |
+| Copilot Settings   | Copilot YAML Config         |
+| Funding            | GitHub Sponsors / BMC       |
+| Release Mgmt       | Release Drafter             |
 
 ---
 
