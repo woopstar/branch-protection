@@ -17,7 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: ahmadnassri/action-conventional-commits-labels@v3
+      - uses: actions/checkout@v4
+
+      - uses: mauroalderete/action-assign-labels@v1
         with:
           pull-request-number: ${{ github.event.pull_request.number }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
