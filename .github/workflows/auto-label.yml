@@ -1,0 +1,14 @@
+name: Auto Label PRs from Commits
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  labeler:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: cc-scx/conventional-commits-pr-labels@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
