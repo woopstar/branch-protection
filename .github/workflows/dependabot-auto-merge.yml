@@ -20,6 +20,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Enable auto-merge
         uses: peter-evans/enable-pull-request-automerge@v3
         with:
