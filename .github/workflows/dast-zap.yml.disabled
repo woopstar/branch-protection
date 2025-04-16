@@ -9,6 +9,10 @@ on:
   schedule:
     - cron: '0 4 * * *'
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   zap-scan:
     name: DAST OWASP ZAP

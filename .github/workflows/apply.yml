@@ -9,6 +9,10 @@ on:
       - '.github/branch-protection.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   protect:
     name: Apply Branch Protection Rules

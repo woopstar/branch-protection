@@ -2,15 +2,16 @@
 # Copyright (C) 2025 Andreas Krüger
 
 name: Trivy Misconfig Scans
-permissions:
-  contents: read
-  pull-requests: write
 
 on:
   pull_request:
     branches: [main]
   schedule:
     - cron: '0 1 * * *'  # Runs daily at 01:00 UTC
+
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   sca-and-config:
