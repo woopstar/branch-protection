@@ -1,4 +1,4 @@
-name: License Scan
+name: FOSS License Scan (Python)
 
 on:
   pull_request:
@@ -7,18 +7,35 @@ on:
     - cron: '0 2 * * *'
 
 jobs:
-  license-scan:
-    name: FOSS License Scan
+  license_check:
+    name: FOSS License Compliance
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-
     steps:
-      - name: Checkout Repository
+      - name: Checkout the code
         uses: actions/checkout@v4
-
-      - name: Run License Scan
-        uses: licensee/licensed-ci@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Get all dependencies
+        run: |
+          pip3 install --upgrade pip
+          pip3 install -r requirements.txt
+          pip3 freeze > requirements-all.txt
+
+      - name: Check licenses
+        id: license_check_report
+        uses: pilosus/action-pip-license-checker@v2
+        with:
+          requirements: 'requirements-all.txt'
+          fail: 'Copyleft'
+          exclude: '(?i)^(pylint|aio|homeassistant|black|isort[-_]*).*'
+
+      - name: Print report
+        if: ${{ always() }}
+        run: echo "${{ steps.license_check_report.outputs.report }}"

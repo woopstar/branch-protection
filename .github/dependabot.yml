@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"  # Root-level workflows
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/"  # Assumes requirements.txt in root
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-type: "all"
+    ignore:
+      - dependency-name: "pip"
+        versions: ["*"]

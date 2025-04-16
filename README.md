@@ -46,7 +46,7 @@ branches:
     required_status_checks:
       strict: true
       contexts:
-        - "FOSS License Scan"
+        - "FOSS License Compliance"
         - "CodeQL"
         - "DAST OWASP ZAP"
         - "SCA Scan"
