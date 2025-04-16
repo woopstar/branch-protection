@@ -28,6 +28,7 @@ categories:
       - 'refactor'
       - 'perf'
       - 'build'
+      - 'update'
 
   - title: '🧪 Tests'
     labels:
