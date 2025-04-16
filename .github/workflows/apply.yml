@@ -1,0 +1,21 @@
+name: Enforce Branch Protection
+
+on:
+  push:
+    paths:
+      - '.github/branch-protection.yml'
+  workflow_dispatch:
+
+jobs:
+  protect:
+    name: Apply Branch Protection Rules
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Apply branch protection
+        uses: ./.github/actions/apply-branch-protection
+        with:
+          token: ${{ secrets.GH_ADMIN_TOKEN }}

@@ -1,0 +1,18 @@
+name: Apply Branch Protection Rules
+
+on:
+  workflow_dispatch:
+
+jobs:
+  protect:
+    name: Apply Rules from Example Config
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Apply branch protection
+        uses: woopstar/branch-protection@v1
+        with:
+          token: ${{ secrets.GH_ADMIN_TOKEN }}

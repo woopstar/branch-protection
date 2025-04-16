@@ -1,0 +1,23 @@
+name: License Scan
+
+on:
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 2 * * *'  # Runs daily at 02:00 UTC
+
+jobs:
+  license-scan:
+    name: FOSS License Scan
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Run Licensee
+        uses: github/licensee-action@v2

@@ -1,0 +1,36 @@
+name: 'Apply Branch Protection'
+description: 'Applies GitHub branch protection rules from a YAML config file in .github/branch-protection.yml.'
+
+author: 'woopstar'
+
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  token:
+    description: 'GitHub token with repo and admin:repo_hook permissions.'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install dependencies
+      shell: bash
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq yq
+
+    - name: Authenticate with GitHub CLI
+      shell: bash
+      run: gh auth login --with-token < <(echo "${{ inputs.token }}")
+
+
+    - name: Apply branch protection rules
+      shell: bash
+      run: |
+        bash "${{ github.action_path }}/entrypoint.sh"
+        if [ $? -ne 0 ]; then
+          echo "Failed to apply branch protection rules."
+          exit 1
+        fi

@@ -1,0 +1,21 @@
+name: Validate Branch Protection Config
+
+on:
+  pull_request:
+    paths:
+      - '.github/branch-protection.yml'
+
+jobs:
+  validate-yaml:
+    name: Validate branch-protection.yml
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Validate YAML format
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y yq
+          yq e '.' .github/branch-protection.yml > /dev/null
