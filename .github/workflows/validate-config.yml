@@ -18,4 +18,4 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y yq
-          yq .github/branch-protection.yml > /dev/null
+          yq eval . .github/branch-protection.yml > /dev/null
