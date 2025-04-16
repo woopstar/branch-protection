@@ -12,6 +12,11 @@ on:
       - .github/sync-labels.yml
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pull-requests: write
+  labels: write
+
 jobs:
   labels:
     name: ♻️ Sync labels
