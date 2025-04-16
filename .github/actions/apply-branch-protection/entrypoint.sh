@@ -1,4 +1,6 @@
 #!/bin/bash
+# SPDX-License-Identifier: MIT
+# Copyright (C) 2025 Andreas Krüger
 
 CONFIG_FILE=".github/branch-protection.yml"
 

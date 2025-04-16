@@ -1,4 +1,7 @@
-name: Trivy Security Scans
+# SPDX-License-Identifier: MIT
+# Copyright (C) 2025 Andreas Krüger
+
+name: Trivy SCA Scans
 
 on:
   pull_request:
@@ -6,9 +9,13 @@ on:
   schedule:
     - cron: '0 1 * * *'  # Runs daily at 01:00 UTC
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   sca-and-config:
-    name: SCA & Misconfig Scan
+    name: SCA Scan
     runs-on: ubuntu-latest
 
     steps:
@@ -20,12 +27,5 @@ jobs:
         with:
           scan-type: fs
           ignore-unfixed: true
-          format: table
-          severity: CRITICAL,HIGH
-
-      - name: Misconfiguration Scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: config
           format: table
           severity: CRITICAL,HIGH

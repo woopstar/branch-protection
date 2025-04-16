@@ -1,28 +1,30 @@
 # SPDX-License-Identifier: MIT
 # Copyright (C) 2025 Andreas Krüger
 
-name: Secrets Scan
+name: Trivy Misconfig Scans
 
 on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 5 * * *'
+    - cron: '0 1 * * *'  # Runs daily at 01:00 UTC
 
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
-  scan-secrets:
-    name: Secrets Scan (TruffleHog)
+  sca-and-config:
+    name: Misconfig Scan
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run TruffleHog
-        uses: trufflesecurity/trufflehog@main
+      - name: Misconfiguration Scan
+        uses: aquasecurity/trivy-action@master
         with:
-          scanArguments: --only-verified
+          scan-type: config
+          format: table
+          severity: CRITICAL,HIGH

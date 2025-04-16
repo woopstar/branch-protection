@@ -1,9 +1,16 @@
+# SPDX-License-Identifier: MIT
+# Copyright (C) 2025 Andreas Krüger
+
 name: Validate Branch Protection Config
 
 on:
   pull_request:
     paths:
       - '.github/branch-protection.yml'
+
+permissions:
+  contents: read
+  pull-requests: write
 
 jobs:
   validate-yaml:
@@ -14,8 +21,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Validate YAML format
+      - name: Install yq (v4+)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y yq
-          yq e '.' .github/branch-protection.yml > /dev/null
+          wget https://github.com/mikefarah/yq/releases/download/v4.43.1/yq_linux_amd64 -O /usr/local/bin/yq
+          chmod +x /usr/local/bin/yq
+
+      - name: Validate YAML structure
+        run: |
+          yq eval . .github/branch-protection.yml > /dev/null

@@ -1,3 +1,8 @@
+<!--
+Copyright (c) 2025 Andreas Krüger
+SPDX-License-Identifier: MIT
+-->
+
 <p align="center">
   <img src="assets/logo.png" alt="Branch Protection Logo" width="200"/>
 </p>
@@ -46,10 +51,11 @@ branches:
     required_status_checks:
       strict: true
       contexts:
-        - "FOSS License Scan"
-        - "CodeQL SAST"
+        - "FOSS License Compliance"
+        - "CodeQL"
         - "DAST OWASP ZAP"
-        - "SCA & Misconfig Scan"
+        - "SCA Scan"
+        - "Misconfig Scan"
         - "Secrets Scan (TruffleHog)"
         - "Validate branch-protection.yml"
     required_pull_request_reviews:
@@ -91,22 +97,22 @@ jobs:
 
 ## Security & Quality Coverage
 
-| Layer            | Coverage Tool           |
-|------------------|--------------------------|
-| SAST             | CodeQL                   |
-| DAST             | OWASP ZAP                |
-| SCA              | Trivy (Filesystem)       |
-| Misconfiguration | Trivy (Config Scanner)   |
-| License          | GitHub Licensee          |
-| Secrets          | TruffleHog + GitHub Native |
-| YAML Linting     | yq Validation            |
-| Dependency Updates | Dependabot             |
-| CI Enforcement   | GitHub Actions + Protection |
-| Label Sync       | Label Sync Action        |
-| Auto-Merge       | Dependabot Auto Merge    |
-| Copilot Settings | Copilot YAML Config      |
-| Funding          | GitHub Sponsors / BMC    |
-| Release Mgmt     | Release Drafter          |
+| Layer              | Coverage Tool               |
+|--------------------|-----------------------------|
+| SAST               | CodeQL                      |
+| DAST               | OWASP ZAP (Disabled)        |
+| SCA                | Trivy (Filesystem)          |
+| Misconfiguration   | Trivy (Config Scanner)      |
+| License            | GitHub Licensee             |
+| Secrets            | TruffleHog + GitHub Native  |
+| YAML Linting       | yq Validation               |
+| Dependency Updates | Dependabot                  |
+| CI Enforcement     | GitHub Actions + Protection |
+| Label Sync         | Label Sync Action           |
+| Auto-Merge         | Dependabot Auto Merge       |
+| Copilot Settings   | Copilot YAML Config         |
+| Funding            | GitHub Sponsors / BMC       |
+| Release Mgmt       | Release Drafter             |
 
 ---
 

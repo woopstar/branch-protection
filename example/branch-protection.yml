@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: MIT
+# Copyright (C) 2025 Andreas Krüger
+
 branches:
   main:
     enforce_admins: true
@@ -5,10 +8,11 @@ branches:
     required_status_checks:
       strict: true
       contexts:
-        - "FOSS License Scan"
-        - "CodeQL SAST"
+        - "FOSS License Compliance"
+        - "CodeQL"
         - "DAST OWASP ZAP"
-        - "SCA & Misconfig Scan"
+        - "Misconfig Scan"
+        - "SCA Scan"
         - "Secrets Scan (TruffleHog)"
         - "Validate branch-protection.yml"
 

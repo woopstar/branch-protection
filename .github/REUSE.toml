@@ -1,0 +1,9 @@
+# SPDX-License-Identifier: MIT
+# Copyright (C) 2025 Andreas Krüger
+
+version = 1
+
+[reuse]
+project = "branch-protection"
+copyright_owner = "2025 woopstar"
+license = "MIT"

@@ -1,3 +1,7 @@
+<!--
+Copyright (c) 2025 Andreas Krüger
+SPDX-License-Identifier: MIT
+-->
 ---
 name: Feature Request
 about: Suggest an idea for this project

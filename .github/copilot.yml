@@ -1,2 +1,5 @@
+# SPDX-License-Identifier: MIT
+# Copyright (C) 2025 Andreas Krüger
+
 features:
   pullRequestCommenting: true

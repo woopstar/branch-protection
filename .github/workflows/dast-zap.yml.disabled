@@ -1,26 +1,28 @@
 # SPDX-License-Identifier: MIT
 # Copyright (C) 2025 Andreas Krüger
 
-name: FOSS License Scan
+name: OWASP ZAP Scan
 
 on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 4 * * *'
 
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
-  license_check:
-    name: FOSS License Compliance
+  zap-scan:
+    name: DAST OWASP ZAP
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Run REUSE compliance check
-        uses: fsfe/reuse-action@v1
+      - name: Run ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          target: 'https://github.com/woopstar/branch-protection'  # Update this to your actual app or test site
