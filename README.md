@@ -10,9 +10,9 @@ SPDX-License-Identifier: MIT
 # Branch Protection GitHub Action
 
 ![License Scan](https://github.com/woopstar/branch-protection/actions/workflows/foss-license-scan.yml/badge.svg)
-![CodeQL](https://github.com/woopstar/branch-protection/actions/workflows/sast-codeql.yml/badge.svg)
-![ZAP DAST](https://github.com/woopstar/branch-protection/actions/workflows/dast-zap.yml/badge.svg)
-![SCA & Misconfig](https://github.com/woopstar/branch-protection/actions/workflows/sca-trivy.yml/badge.svg)
+![CodeQL](https://github.com/woopstar/branch-protection/actions/workflows/github-code-scanning/codeql/badge.svg)
+![SCA](https://github.com/woopstar/branch-protection/actions/workflows/sca-trivy.yml/badge.svg)
+![Misconfig](https://github.com/woopstar/branch-protection/actions/workflows/misconfig-trivy.yml/badge.svg)
 ![Secrets Scan](https://github.com/woopstar/branch-protection/actions/workflows/secrets-scan.yml/badge.svg)
 ![Config Check](https://github.com/woopstar/branch-protection/actions/workflows/validate-config.yml/badge.svg)
 ![Buy Me a Coffee](https://img.shields.io/badge/BuyMeACoffee-support-orange?logo=buymeacoffee)
